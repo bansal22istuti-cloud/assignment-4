@@ -2,23 +2,69 @@
 this repository contains two task each for the assignment 4 of tutedude python program
 
 ## Task 1
-this task aims
-Program of task 1
-ass3task1.py
+this task aims to open and read a text file named sample.txt and print its content line by line. it should also handle errors gracefully if the file does not exist.
 
-def factorial(n): if n==1: return 1 else: return n*factorial(n-1)
+## Program of task 1
 
-num=int(input("enter your number: ")) result=factorial(num) print(f"the factorial of {num} is {result}") input('press enter to exit')
+[ass4task1.py](https://github.com/user-attachments/files/24332672/ass4task1.py)
 
-Explanation of task 1 program
-here a fuction named factorial is user defined that take a number as an argument. here while defining the function with the help of if else statement, the condition provides both a base condition for the recursion to end that being once the number becoming one to then return 1 and the recursion statement as well. then the user input of the desired number and then the function is called to give the result.
+import os
+file="sample.txt"
+if os.path.exists(file):
+    print(f"file {file} exists")
+    print("======================")
+    fh=open(file,"r")
+    line1= fh.readline()
+    line2= fh.readline()
+    fh.close()
+    print(f'line1: {line1}')
+    print(f'line2: {line2}')
+    print("======================")
+else:
+    print(f"file {file} does not exist")
+    print("======================")
+input("press enter to exit")
+print("======================")
 
-Task 2 this task aims to ask the user for a number as input and use the math module to calculate the square root of the number, natural logarithm (log base e) of the number and sine of the number (in radians) and displays the calculated results.
 
-Program of task 2 ass3task2.py
+## Explanation of task 1 program
+here first os module is imported and then with the help of os.path.exists function , it is checked if the file exists or not and if the file exists then readline function is used to print line. if the file does not exist then with else statement the messase stating the same is printed.
 
-import math num=int(input("enter a number: ")) square_root=math.sqrt(num) print(f"square root of: {square_root}") natural_log=math.log(num) print(f"natural log: {natural_log}") sine=math.sin(num) print(f"sine: {sine}") input("press enter to exit")
+## Task 2 
+this task aims to take user input and writes it to a file named output.txt. and append additional data to the same file. it should also read and display the final content of the file.
 
-Explanation of task 2 program here first math module is imported and from the math module functions for square root, logarithm and sine are used and thr result are then printed.
+## Program of task 2
 
-Status it has been verified before submission that the program runs successfully.
+[ass4task2.py](https://github.com/user-attachments/files/24332739/ass4task2.py)
+
+content=input("enter text to write to the file: ")
+fh=open("output.txt","xt")
+fh.write(content)
+fh.write("\n")
+fh.close()
+print("data successfully written to output.txt")
+print("========================")
+
+addition=input(" enter additional text to append: ")
+fh=open("output.txt","at")
+fh.write(addition)
+fh.close()
+print("data successfully appended to output.txt")
+print("========================")
+
+fh=open("output.txt","rt")
+text=fh.read()
+fh.close()
+
+print("final content of output.txt")
+print(text)
+
+print("========================")
+input("press enter to exit")
+
+
+## Explanation of task 2 program 
+here the user input is written in the output.txt file with write function then the same file is appended in append mode and then the file is read and the final content is printed in the end.
+
+## Status 
+it has been verified before submission that the program runs successfully.
