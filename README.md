@@ -66,5 +66,7 @@ input("press enter to exit")
 ## Explanation of task 2 program 
 here the user input is written in the output.txt file with write function then the same file is appended in append mode and then the file is read and the final content is printed in the end.
 
+NOTE = the output file created is also added to the repository for review
+
 ## Status 
 it has been verified before submission that the program runs successfully.
